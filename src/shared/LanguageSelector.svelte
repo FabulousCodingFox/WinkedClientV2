@@ -39,7 +39,7 @@
     <span class="locale nointeract">{$locale?.toUpperCase()}</span>
   </button>
   <div
-    class="language-select flex-column subtle-shadow {menuOpen ? '' : 'hidden'}"
+    class="language-select flex-column subtle-shadow {menuOpen ? 'visible' : ''}"
   >
     {#each $locales as lang}
       <button
@@ -65,7 +65,7 @@
   top: $GAP
   right: $GAP
   align-items: flex-end
-  gap: $GAP
+  gap: 0.5rem
 
   button
     font-weight: bold
@@ -84,8 +84,12 @@
     border-radius: $GAP
 
   .language-select
-    &.hidden
-      display: none
+    opacity: 0
+    transition: opacity $TRANSITION_FAST ease-in-out
+    pointer-events: none
+    &.visible
+      opacity: 1
+      pointer-events: all
     button
       padding: 0.75rem
       &:hover

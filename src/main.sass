@@ -75,7 +75,14 @@ button
   grid-template-rows: auto
   input
     color: $THEME_COLOR_MODAL_FG
-    border: 1px $THEME_COLOR_MODAL_BORDER solid
+    border: 2px $THEME_COLOR_MODAL_BORDER solid
+    transition: border-color $TRANSITION ease
+    text-transform: uppercase
+    &:placeholder-shown
+      text-transform: none
+    &:focus
+      outline: none
+      border-color: $THEME_COLOR_MODAL_BORDER_FOCUS
   input, button
     width: 100%
     text-align: center

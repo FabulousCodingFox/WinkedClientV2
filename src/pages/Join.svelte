@@ -25,6 +25,10 @@
         ? code_enter_callback(input.value)
         : name_enter_callback(input.value);
     if (error.length > 0) {
+      if (input.classList.contains("error")) {
+        input.classList.remove("error");
+        input.offsetWidth;
+      }
       input.classList.add("error");
     } else {
       input.classList.remove("error");

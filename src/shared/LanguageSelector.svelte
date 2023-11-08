@@ -1,20 +1,59 @@
 <script lang="ts">
-  import { locale, locales, _ } from "svelte-i18n";
+  import { onMount, onDestroy } from "svelte";
+  import { locale, locales, _, dictionary } from "svelte-i18n";
 
-  function setLocale(lang: string) {
-    locale.set(lang);
+  $: menuOpen = false;
+
+  function toggleLanguageMenu(
+    e: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }
+  ) {
+    menuOpen = !menuOpen;
   }
+
+  onMount(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        event.target instanceof Node &&
+        event.target.parentElement?.classList.contains("language-selector")
+      )
+        return;
+      menuOpen = false;
+    };
+
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  });
 </script>
 
-<div class="language-selector">
-  <button>
-    <!--Get the current locale and get the string 'path' from it and set it as a svg element-->
-    <span>{$locale}</span>
+<div class="language-selector flex-column">
+  <button on:click={toggleLanguageMenu} class="flex-row subtle-shadow">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      class="nointeract">{@html String($dictionary[$locale ?? ""]["logo"])}</svg
+    >
+    &nbsp;
+    <span class="locale nointeract">{$locale?.toUpperCase()}</span>
   </button>
-  <div class="dropdown">
+  <div
+    class="language-select flex-column subtle-shadow {menuOpen ? '' : 'hidden'}"
+  >
     {#each $locales as lang}
-      <button on:click={() => locale.set(lang)}>
-        <span>{lang}</span>
+      <button
+        on:click={(e) => {
+          locale.set(lang);
+          toggleLanguageMenu(e);
+        }}
+        class="flex-row"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+          >{@html String($dictionary[lang]["logo"])}</svg
+        >
+        &nbsp;
+        <span class="locale">{$dictionary[lang]["name"]}</span>
       </button>
     {/each}
   </div>
@@ -25,4 +64,30 @@
   position: absolute
   top: $GAP
   right: $GAP
+  align-items: flex-end
+  gap: $GAP
+
+  button
+    font-weight: bold
+    align-items: center
+    font-size: 1rem
+    border-radius: $GAP
+    svg
+      height: 1.5rem
+      aspect-ratio: 1/1
+      border-radius: 50%
+
+  >*
+    background-color: $THEME_LANGUAGE_SELECTOR_BG
+    color: $THEME_LANGUAGE_SELECTOR_FG
+    padding: 0.5rem
+    border-radius: $GAP
+
+  .language-select
+    &.hidden
+      display: none
+    button
+      padding: 0.75rem
+      &:hover
+        background-color: $THEME_LANGUAGE_SELECTOR_BG_HOVER
 </style>

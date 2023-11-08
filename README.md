@@ -5,3 +5,5 @@
 [![GitHub stars](https://img.shields.io/github/stars/Intramo/WinkedClientV2.svg)](https://GitHub.com/Intramo/WinkedClientV2/stargazers/)
 
 Winked is an open source project for live multiplayer quiz games. This is a complete rewrite of the Winked Front- & Backend.
+
+![screenshot](https://github.com/Intramo/WinkedClientV2/assets/78906517/bbb20bdc-33cd-4e7e-aadd-52fb045bb503)

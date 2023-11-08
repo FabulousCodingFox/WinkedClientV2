@@ -1,5 +1,6 @@
 *, *::after, *::before
   box-sizing: border-box
+  font-family: 'Montserrat', sans-serif
 
 :root
   --gap: 1rem
@@ -9,9 +10,6 @@ html, body, #app
   height: 100%
   margin: 0
   padding: 0
-
-#app
-  font-family: 'Roboto', sans-serif
 
 #bg
   width: 100%
@@ -33,17 +31,30 @@ html, body, #app
   justify-content: center
   align-items: center
 
+.flex-column
+  display: flex
+  flex-flow: column nowrap
+
+.flex-row
+  display: flex
+  flex-flow: row nowrap
+
 .noselect
   user-select: none
 
 .nointeract
   pointer-events: none
 
-.button
+.subtle-shadow
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 4px
+
+button
   outline: none
   border: none
   background-color: transparent
   cursor: pointer
+
+.button
   background-color: $THEME_BUTTON_BG
   color: $THEME_BUTTON_FG
   border: 1px $THEME_BUTTON_BORDER solid

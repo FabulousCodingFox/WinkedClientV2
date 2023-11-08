@@ -4,6 +4,7 @@
     "page": {
         "join": {
             "code": "Code",
+            "name": "Name",
             "button": {
                 "next": "Next"
             }

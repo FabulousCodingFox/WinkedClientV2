@@ -7,6 +7,6 @@ addMessages('de', de);
 addMessages('en', en);
 
 init({
-  fallbackLocale: 'de',
+  fallbackLocale: 'en',
   initialLocale: getLocaleFromNavigator(),
 });

@@ -74,6 +74,7 @@ button
   grid-template-columns: 1fr
   grid-template-rows: auto
   input
+    position: relative
     color: $THEME_COLOR_MODAL_FG
     border: 2px $THEME_COLOR_MODAL_BORDER solid
     transition: border-color $TRANSITION ease
@@ -84,6 +85,18 @@ button
     &:focus
       outline: none
       border-color: $THEME_COLOR_MODAL_BORDER_FOCUS
+    &.error
+      @keyframes form-input-error-shake
+        20%,
+        60%
+          transform: translate(-0.5rem, 0px)
+        40%,
+        80%
+          transform: translate(0.5rem, 0px)
+          animation: 0.4s ease 0s 1 normal none running form-input-error-shake
+          border-color: $THEME_COLOR_MODAL_BORDER_ERROR
+          background-color: $THEME_COLOR_MODAL_BG_ERROR
+          background: url('https://assets-cdn.kahoot.it/controller/v2/assets/icn_field_error-dfdd7c8c.svg') right center / 1.5rem 1.5rem no-repeat scroll rgb(255, 242, 244)
   input, button
     width: 100%
     text-align: center

@@ -15,7 +15,7 @@
 
 <style lang="sass">
 .join-container
-  width: calc(100% - var(--gap))
+  width: calc(100% - #{$GAP})
   max-width: 540px
   >img
     width: 100%

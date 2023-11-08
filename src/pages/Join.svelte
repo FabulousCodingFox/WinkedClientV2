@@ -2,6 +2,7 @@
   import { _ } from "svelte-i18n";
   import logoSrc from "../assets/logo.svg";
   import LanguageSelector from "../shared/LanguageSelector.svelte";
+  import WebsiteCredits from "../shared/WebsiteCredits.svelte";
 
   let button: HTMLButtonElement;
 
@@ -30,6 +31,7 @@
 </section>
 
 <LanguageSelector />
+<WebsiteCredits />
 
 <style lang="sass">
 .join-container

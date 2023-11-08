@@ -8,5 +8,10 @@
                 "next": "Weiter"
             }
         }
+    },
+    "footer": {
+        "create-quiz": "Erstelle dein eigenes Quiz",
+        "github": "GitHub",
+        "data-protection": "Datenschutz"
     }
 }

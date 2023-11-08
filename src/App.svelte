@@ -3,10 +3,10 @@
   import TileBackground from "./shared/TileBackground.svelte";
 </script>
 
-<div id="bg">
+<div id="bg" class="fwh">
   <TileBackground />
 </div>
 
-<main>
+<main class="fwh">
   <Join />
 </main>

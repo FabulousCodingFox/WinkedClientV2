@@ -32,3 +32,42 @@ html, body, #app
   display: flex
   justify-content: center
   align-items: center
+
+.noselect
+  user-select: none
+
+.nointeract
+  pointer-events: none
+
+button
+  outline: none
+  border: none
+  background-color: transparent
+  cursor: pointer
+  background-color: $THEME_BUTTON_BG
+  color: $THEME_BUTTON_FG
+  border: 1px $THEME_BUTTON_BORDER solid
+  padding: $GAP
+  border-bottom: 5px $THEME_BUTTON_BORDER solid
+  transform: translateY(0px)
+  transition: transform $TRANSITION ease
+  &:hover
+    transform: translateY(3px)
+
+.form
+  padding: $GAP
+  border-radius: 0.5rem
+  background-color: $THEME_COLOR_MODAL_BG
+  gap: $GAP
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: auto
+  input
+    color: $THEME_COLOR_MODAL_FG
+    border: 1px $THEME_COLOR_MODAL_BORDER solid
+  input, button
+    width: 100%
+    text-align: center
+    font-size: 1.5rem
+    border-radius: 0.5rem
+    padding: $GAP

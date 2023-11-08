@@ -4,11 +4,11 @@
 
 <section class="fwh rel flex-center">
   <div class="join-container">
-    <img src={logoSrc} alt="Logo" />
-    <form>
+    <img class="noselect nointeract" src={logoSrc} alt="Logo" />
+    <div class="form">
       <input type="text" placeholder="Code" />
       <button>Weiter</button>
-    </form>
+    </div>
   </div>
 </section>
 
@@ -16,4 +16,9 @@
 .join-container
   width: calc(100% - var(--gap))
   max-width: 540px
+  >img
+    width: 100%
+    height: auto
+  >div
+    margin-top: $GAP
 </style>

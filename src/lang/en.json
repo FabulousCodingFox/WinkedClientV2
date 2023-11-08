@@ -1,0 +1,10 @@
+{
+    "page": {
+        "join": {
+            "code": "Code",
+            "button": {
+                "next": "Next"
+            }
+        }
+    }
+}

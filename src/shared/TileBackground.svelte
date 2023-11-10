@@ -12,6 +12,8 @@
 </div>
 
 <style lang="scss">
+  @import "../_globals.scss";
+
   @keyframes shapeAnimation {
     0% {
       transform: translateY(0) rotate(0deg);

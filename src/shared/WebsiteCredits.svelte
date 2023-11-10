@@ -3,14 +3,16 @@
 </script>
 
 <footer class="website-credits flex-column center">
-  <p><a href="#">{$_("footer.create-quiz")}</a></p>
+  <p><a href="#a">{$_("footer.create-quiz")}</a></p>
   <p>
-    <a href="#">{$_("footer.github")}</a> |
-    <a href="#">{$_("footer.data-protection")}</a>
+    <a href="#a">{$_("footer.github")}</a> |
+    <a href="#a">{$_("footer.data-protection")}</a>
   </p>
 </footer>
 
 <style lang="scss">
+  @import "../_globals.scss";
+
   .website-credits {
     position: absolute;
     bottom: $GAP;

@@ -1,3 +1,5 @@
+@import "_globals.scss";
+
 *,
 *::after,
 *::before {
@@ -103,12 +105,12 @@ button {
         40%,
         80% {
           transform: translate(0.5rem, 0px);
-          animation: 0.4s ease 0s 1 normal none running form-input-error-shake;
-          border-color: $THEME_COLOR_MODAL_BORDER_ERROR;
-          background-color: $THEME_COLOR_MODAL_BG_ERROR;
-          background: url("https://assets-cdn.kahoot.it/controller/v2/assets/icn_field_error-dfdd7c8c.svg") right center / 1.5rem 1.5rem no-repeat scroll rgb(255, 242, 244);
         }
       }
+      animation: 0.4s ease 0s 1 normal none running form-input-error-shake;
+      border-color: $THEME_COLOR_MODAL_BORDER_ERROR;
+      background-color: $THEME_COLOR_MODAL_BG_ERROR;
+      background: url("https://assets-cdn.kahoot.it/controller/v2/assets/icn_field_error-dfdd7c8c.svg") right center / 1.5rem 1.5rem no-repeat scroll rgb(255, 242, 244);
     }
   }
   input,

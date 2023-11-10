@@ -45,6 +45,8 @@
 </div>
 
 <style lang="scss">
+  @import "../_globals.scss";
+
   .language-selector {
     position: absolute;
     top: $GAP;

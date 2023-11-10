@@ -10,19 +10,22 @@
   </p>
 </footer>
 
-<style lang="sass">
-.website-credits
-  position: absolute
-  bottom: $GAP
-  left: 50%
-  transform: translateX(-50%)
-  display: flex
-  flex-flow: column nowrap
-  align-items: center
-  justify-content: center
-  gap: $GAP
-  p
-    margin: 0
-    a
-      color: $THEME_FOOTER_COLOR
+<style lang="scss">
+  .website-credits {
+    position: absolute;
+    bottom: $GAP;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: $GAP;
+    p {
+      margin: 0;
+      a {
+        color: $THEME_FOOTER_COLOR;
+      }
+    }
+  }
 </style>

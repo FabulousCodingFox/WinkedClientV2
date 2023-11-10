@@ -1,0 +1,121 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+:root {
+  --gap: 1rem;
+}
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.fwh {
+  width: 100%;
+  height: 100%;
+}
+.rel {
+  position: relative;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.noselect {
+  user-select: none;
+}
+.nointeract {
+  pointer-events: none;
+}
+.subtle-shadow {
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 4px;
+}
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.button {
+  background-color: $THEME_BUTTON_BG;
+  color: $THEME_BUTTON_FG;
+  border: 1px $THEME_BUTTON_BORDER solid;
+  padding: $GAP;
+  border-bottom: 5px $THEME_BUTTON_BORDER solid;
+  transform: translateY(0px);
+  transition: transform $TRANSITION ease;
+  &:hover {
+    transform: translateY(3px);
+  }
+}
+.form {
+  padding: $GAP;
+  border-radius: 0.5rem;
+  background-color: $THEME_COLOR_MODAL_BG;
+  gap: $GAP;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  input {
+    position: relative;
+    color: $THEME_COLOR_MODAL_FG;
+    border: 2px $THEME_COLOR_MODAL_BORDER solid;
+    transition: border-color $TRANSITION ease;
+    &.code {
+      text-transform: uppercase;
+    }
+    &:placeholder-shown {
+      text-transform: none;
+    }
+    &:focus {
+      outline: none;
+      border-color: $THEME_COLOR_MODAL_BORDER_FOCUS;
+    }
+    &.error {
+      @keyframes form-input-error-shake {
+        20%,
+        60% {
+          transform: translate(-0.5rem, 0px);
+        }
+        40%,
+        80% {
+          transform: translate(0.5rem, 0px);
+          animation: 0.4s ease 0s 1 normal none running form-input-error-shake;
+          border-color: $THEME_COLOR_MODAL_BORDER_ERROR;
+          background-color: $THEME_COLOR_MODAL_BG_ERROR;
+          background: url("https://assets-cdn.kahoot.it/controller/v2/assets/icn_field_error-dfdd7c8c.svg") right center / 1.5rem 1.5rem no-repeat scroll rgb(255, 242, 244);
+        }
+      }
+    }
+  }
+  input,
+  button {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    padding: $GAP;
+  }
+}

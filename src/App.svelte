@@ -26,9 +26,5 @@
 </div>
 
 <main class="fwh">
-  <Join
-    stage={pageJoinStage}
-    code_enter_callback={onPageJoinCodeEnter}
-    name_enter_callback={onPageJoinNameEnter}
-  />
+  <Join stage={pageJoinStage} code_enter_callback={onPageJoinCodeEnter} name_enter_callback={onPageJoinNameEnter} />
 </main>

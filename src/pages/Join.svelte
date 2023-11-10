@@ -17,13 +17,8 @@
     }
   };
 
-  function onEnterPress(
-    e: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }
-  ) {
-    let error =
-      stage == 0
-        ? code_enter_callback(input.value)
-        : name_enter_callback(input.value);
+  function onEnterPress(e: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
+    let error = stage == 0 ? code_enter_callback(input.value) : name_enter_callback(input.value);
     if (error.length > 0) {
       if (input.classList.contains("error")) {
         input.classList.remove("error");
@@ -44,31 +39,24 @@
   <div class="join-container">
     <img class="noselect nointeract" src={logoSrc} alt="Logo" />
     <div class="form">
-      <input
-        type="text"
-        class={stage == 0 ? "code" : "name"}
-        placeholder={$_(stage == 0 ? "page.join.code" : "page.join.name")}
-        maxlength={stage == 0 ? 6 : 16}
-        minlength={stage == 0 ? 6 : 3}
-        on:keydown={handleKeyDown}
-        bind:this={input}
-      />
-      <button class="button" bind:this={button} on:click={onEnterPress}
-        >{$_("page.join.button.next")}</button
-      >
+      <input type="text" class={stage == 0 ? "code" : "name"} placeholder={$_(stage == 0 ? "page.join.code" : "page.join.name")} maxlength={stage == 0 ? 6 : 16} minlength={stage == 0 ? 6 : 3} on:keydown={handleKeyDown} bind:this={input} />
+      <button class="button" bind:this={button} on:click={onEnterPress}>{$_("page.join.button.next")}</button>
     </div>
   </div>
   <LanguageSelector />
   <WebsiteCredits />
 </section>
 
-<style lang="sass">
-.join-container
-  width: calc(100% - #{$GAP})
-  max-width: 540px
-  >img
-    width: 100%
-    height: auto
-  >div
-    margin-top: $GAP
+<style lang="scss">
+  .join-container {
+    width: calc(100% - #{$GAP});
+    max-width: 540px;
+    > img {
+      width: 100%;
+      height: auto;
+    }
+    > div {
+      margin-top: $GAP;
+    }
+  }
 </style>

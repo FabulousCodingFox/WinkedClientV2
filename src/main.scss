@@ -44,6 +44,7 @@ body,
   flex-flow: row nowrap;
 }
 .noselect {
+  -webkit-user-select: none;
   user-select: none;
 }
 .nointeract {
